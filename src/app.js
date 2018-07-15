@@ -35,7 +35,7 @@ const controlResult = function(hide, value) {
     document.querySelector("#result").classList.remove("d-none")
   }
 
-  document.querySelector("#result").innerHTML = `A música tem ${value} minutos`
+  document.querySelector("#result").innerHTML = `A música tem ${value}`
 }
 
 const calculateMinutagem = function() {
