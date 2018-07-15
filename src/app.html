@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Minutagem</title>
+
+  <script src="./app.js"></script>
+</head>
+<body>
+<h1>Minutagem</h1>
+<p>Calcule a duração de uma música à partir de sua partitura.</p>
+<main>
+  <p id="validation-error">*Todos os campos são obrigatórios!</p>
+  <label for="bpm">Batidas por minuto</label>
+  <input type="number" id="bpm" placeholder="110">
+
+  <label for="signature-formula">Fórmula de compassos</label>
+  <select id="signature-formula">
+
+  <label for="bar-count">Número de compassos</label>
+  <input type="number" id="bar-count" placeholder="38">
+
+  <button id="calculate-button" type="button">Calcular</button>
+
+  <p id="result">A música tem X:XX minutos.</p>
+</main>
+</body>
+</html>
