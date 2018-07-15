@@ -13,6 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="./src/app.css">
+  <script src="./src/minutagem.js"></script>
   <script src="./src/app.js"></script>
 </head>
 <body class="text-center">
@@ -21,8 +22,8 @@
     <h1 class="h3 font-weight-normal">Minutagem</h1>
     <p>Calcule a duração de uma música à partir de sua partitura.</p>
 
-    <div id="validation-error" class="alert alert-warning">Atenção: todos os campos devem ser preenchidos.</div>
-    <div id="result" class="alert alert-success"></div>
+    <div id="validation-error" class="d-none alert alert-warning">Atenção: todos os campos devem ser preenchidos.</div>
+    <div id="result" class="d-none alert alert-success"></div>
 
     <div class="form-group">
       <label for="bpm">Batidas por minuto (BPM)</label>
