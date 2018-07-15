@@ -16,5 +16,3 @@ const Minutagem = {
     return Math.round(beatInSeconds * totalTempoCount);
   }
 }
-
-module.exports = Minutagem
