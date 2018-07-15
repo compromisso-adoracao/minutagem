@@ -1,30 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Minutagem</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./app.css">
   <script src="./app.js"></script>
 </head>
-<body>
-<h1>Minutagem</h1>
-<p>Calcule a duração de uma música à partir de sua partitura.</p>
-<main>
-  <p id="validation-error">*Todos os campos são obrigatórios!</p>
-  <label for="bpm">Batidas por minuto</label>
-  <input type="number" id="bpm" placeholder="110">
+<body class="text-center">
+  <form class="form-minutagem">
+    <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/C_barr%C3%A9_%28indication_de_mesure%29.svg" alt="" width="72" height="72">
+    <h1 class="h3 font-weight-normal">Minutagem</h1>
+    <p>Calcule a duração de uma música à partir de sua partitura.</p>
 
-  <label for="signature-formula">Fórmula de compassos</label>
-  <select id="signature-formula">
+    <div id="validation-error" class="alert alert-warning">Atenção: todos os campos devem ser preenchidos.</div>
+    <div id="result" class="alert alert-success"></div>
 
-  <label for="bar-count">Número de compassos</label>
-  <input type="number" id="bar-count" placeholder="38">
+    <div class="form-group">
+      <label for="bpm">Batidas por minuto (BPM)</label>
+      <input type="number" id="bpm" class="form-control" placeholder="Batidas por minuto (BPM)" required="" autofocus="">
+    </div>
 
-  <button id="calculate-button" type="button">Calcular</button>
+    <div class="form-group">
+      <label for="bar-count">Contagem de compassos</label>
+      <input type="number" id="bar-count" class="form-control" placeholder="Contagem de compassos" required="" autofocus="">
+    </div>
 
-  <p id="result">A música tem X:XX minutos.</p>
-</main>
+    <div class="form-group">
+      <label for="signature-formula">Fórmula de compassos</label>
+      <select id="signature-formula" class="form-control form-control-lg" required=""></select>
+    </div>
+
+    <button id="calculate-button" class="btn btn-lg btn-primary btn-block" type="button">Calcular</button>
+
+    <p class="mt-5 mb-3 text-muted">
+      <a href="https://github.com/vnbrs">Vinicius Brasil © 2018</a>
+    </p>
+  </form>
 </body>
 </html>

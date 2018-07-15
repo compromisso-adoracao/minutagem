@@ -40,11 +40,20 @@ const populateTimeSignatureOptions = function() {
 }
 
 const controlValidationError = function(hide) {
-  document.querySelector("#validation-error").style.visibility = hide ? "hidden" : "visible";
+  if (hide) {
+    document.querySelector("#validation-error").classList.add("d-none")
+  } else {
+    document.querySelector("#validation-error").classList.remove("d-none")
+  }
 }
 
 const controlResult = function(hide, value) {
-  document.querySelector("#result").style.visibility = hide ? "hidden" : "visible";
+  if (hide) {
+    document.querySelector("#result").classList.add("d-none")
+  } else {
+    document.querySelector("#result").classList.remove("d-none")
+  }
+
   document.querySelector("#result").innerHTML = `A música tem ${value} minutos`
 }
 
