@@ -7,7 +7,7 @@ String.prototype.toHHMMSS = function () {
   if (hours   < 10) {hours   = "0"+hours;}
   if (minutes < 10) {minutes = "0"+minutes;}
   if (seconds < 10) {seconds = "0"+seconds;}
-  return hours+':'+minutes+':'+seconds;
+  return hours + ':' + minutes + ':' + seconds;
 }
 
 const populateTimeSignatureOptions = function() {
@@ -42,20 +42,23 @@ const calculateMinutagem = function() {
   const bpm = document.querySelector("#bpm").value;
   const signatureFormula = document.querySelector("#signature-formula").value;
   const barCount = document.querySelector("#bar-count").value;
+  const aditionalSeconds = document.querySelector("#aditional-seconds").value;
 
   if (!bpm || isNaN(bpm)) return null
   if (!signatureFormula) return null
   if (!barCount || isNaN(barCount)) return null
+  if (!aditionalSeconds || isNaN(aditionalSeconds)) return null
 
-  const timeSignature = Minutagem.timeSignatures.find((item) => item.formula === signatureFormula)
+  const timeSignature = Minutagem.timeSignatures.find((item) => item.formula === signatureFormula);
   if (timeSignature) {
-    return Minutagem.calculate(bpm, timeSignature, barCount)
+    return Minutagem.calculate(bpm, timeSignature, barCount) + aditionalSeconds;
   }
 
   return null
 }
 
 window.onload = function() {
+  document.querySelector("#aditional-seconds").value = 0;
   controlValidationError(hide = true)
   controlResult(hide = true)
 

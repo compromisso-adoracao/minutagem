@@ -22,12 +22,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="./src/app.css">
-  <script src="./lib/minutagem.min.js"></script>
+  <script src="./src/minutagem.js"></script>
+  <script src="./src/app.js"></script>
 </head>
 <body class="text-center">
   <form class="form-minutagem">
-    <img class="mb-4 mt-4" src="./assets/logo-connect.png" height="50" alt="">
-    <h1 class="h3 font-weight-normal">Minutagem</h1>
+    <img class="mt-4" src="./assets/logo-connect.png" height="50" alt="">
+    <h1 class="h3 font-weight-normal" style="color: #039399;">Minutagem</h1>
     <p>Calcule a duração de uma música à partir de sua partitura.</p>
 
     <div id="validation-error" class="d-none alert alert-warning">Atenção: todos os campos devem ser preenchidos.</div>
@@ -48,11 +49,16 @@
       <select id="signature-formula" class="form-control form-control-lg" required=""></select>
     </div>
 
+    <div class="form-group">
+      <label for="aditional-seconds">Segundos adicionais</label>
+      <input type="number" id="aditional-seconds" class="form-control" placeholder="Segundos adicionais" required="" autofocus="">
+    </div>
+
     <button id="calculate-button" class="btn btn-lg btn-primary btn-block" type="button">Calcular</button>
 
     <p class="mt-5 mb-3 text-muted">
       <p>
-        <img src="./assets/logo-compromisso-adoracao.png" height="50">
+        <a href="https://www.pibcuritiba.org.br/adoracao/"><img src="./assets/logo-compromisso-adoracao.png" height="50"></a>
       </p>
       <p><a href="https://github.com/vnbrs">Vinicius Brasil © 2018</a></p>
     </p>
