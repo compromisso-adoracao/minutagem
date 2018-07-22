@@ -1,4 +1,4 @@
-<img src="http://prismaaudio.com.br/images/clients/primeira_igreja_batista.png" align="right" />
+<img src="https://i0.wp.com/www.pibcuritiba.org.br/wp-content/uploads/2018/02/logo3.jpg?w=1080&ssl=1" align="right" />
 
 # Minutagem
 
