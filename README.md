@@ -1,4 +1,4 @@
-<img src="https://i0.wp.com/www.pibcuritiba.org.br/wp-content/uploads/2018/02/logo3.jpg?w=1080&ssl=1" align="right" />
+<img src="https://image.ibb.co/nNK3Ry/Screen_Shot_2018_07_22_at_18_47_13.png" align="right" />
 
 # Minutagem
 
