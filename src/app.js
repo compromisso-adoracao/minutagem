@@ -1,12 +1,12 @@
-String.prototype.toHHMMSS = function () {
-  var sec_num = parseInt(this, 10);
-  var hours   = Math.floor(sec_num / 3600);
-  var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-  var seconds = sec_num - (hours * 3600) - (minutes * 60);
+const toHHMMSS = function(seconds) {
+  var hours   = Math.floor(seconds / 3600);
+  var minutes = Math.floor((seconds - (hours * 3600)) / 60);
+  var seconds = seconds - (hours * 3600) - (minutes * 60);
 
   if (hours   < 10) {hours   = "0"+hours;}
   if (minutes < 10) {minutes = "0"+minutes;}
   if (seconds < 10) {seconds = "0"+seconds;}
+
   return hours + ':' + minutes + ':' + seconds;
 }
 
@@ -39,17 +39,18 @@ const controlResult = function(hide, value) {
 }
 
 const calculateMinutagem = function() {
-  const bpm = document.querySelector("#bpm").value;
+  const bpm = parseInt(document.querySelector("#bpm").value)
   const signatureFormula = document.querySelector("#signature-formula").value;
-  const barCount = document.querySelector("#bar-count").value;
-  const aditionalSeconds = document.querySelector("#aditional-seconds").value;
+  const barCount = parseInt(document.querySelector("#bar-count").value);
+  const aditionalSeconds = parseInt(document.querySelector("#aditional-seconds").value);
 
-  if (!bpm || isNaN(bpm)) return null
+  if (isNaN(bpm)) return null
   if (!signatureFormula) return null
-  if (!barCount || isNaN(barCount)) return null
-  if (!aditionalSeconds || isNaN(aditionalSeconds)) return null
+  if (isNaN(barCount)) return null
+  if (isNaN(aditionalSeconds)) return null
 
   const timeSignature = Minutagem.timeSignatures.find((item) => item.formula === signatureFormula);
+
   if (timeSignature) {
     return Minutagem.calculate(bpm, timeSignature, barCount) + aditionalSeconds;
   }
@@ -71,7 +72,7 @@ window.onload = function() {
 
       const resultado = calculateMinutagem();
       if (resultado) {
-        controlResult(hide = false, value = resultado.toString().toHHMMSS())
+        controlResult(hide = false, value = toHHMMSS(resultado))
       } else {
         controlValidationError(hide = false);
       }
